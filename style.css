@@ -1,0 +1,28 @@
+#test {
+  width: 80%;
+  height: 80%;
+  background-color: lightgrey;
+}
+
+.board-holder {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  padding: 5px;
+  background: green;
+  height: 40px;
+  width: 40px;
+  border: 2px solid grey;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.row {
+  display: flex;
+}
