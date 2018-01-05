@@ -40,7 +40,12 @@ p {
 }
 
 .assignedAsset {
+  padding: 5px;
   background-color: pink;
+  height: 40px;
+  width: 40px;
+  border: 2px solid red;
+  display: flex;
   justify-content: center;
   margin:0 auto;
 }
