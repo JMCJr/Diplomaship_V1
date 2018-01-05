@@ -1,7 +1,18 @@
+main {
+  
+}
+
 #test {
-  width: 80%;
-  height: 80%;
+  width: 30%;
+  height: 40px;
   background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  margin:0 auto;
+}
+
+p {
+  margin: 0 auto;
 }
 
 .board-holder {
@@ -15,6 +26,7 @@
   height: 40px;
   width: 40px;
   border: 2px solid grey;
+  display: flex;
 }
 
 .grid {
@@ -25,4 +37,10 @@
 
 .row {
   display: flex;
+}
+
+.assignedAsset {
+  background-color: pink;
+  justify-content: center;
+  margin:0 auto;
 }
