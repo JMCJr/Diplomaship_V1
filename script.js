@@ -9,15 +9,16 @@ var assStart = 1000;
 
 
 function countDown() {
-  var assCounter = document.querySelector('#assetCount');
-  var assNum = assStart - 100;
-  assCounter.innerHTML = assNum;
+  // var assCounter = document.querySelector('#assetCount');
+  // var assNum = assStart - 100;
+  // assCounter.innerHTML = assNum;
+  // document.querySelector('#assetCount').innerHTML = assStart - 100;
 }
 
 function selected() {
   event.target.classList.add('assignedAsset');
   event.target.innerText = '100';
-  countDown();
+  document.querySelector('#assetCount').innerHTML = assStart -= 100;
   
 }
 
