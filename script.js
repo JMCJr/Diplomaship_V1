@@ -6,36 +6,41 @@ console.log('Lots of Java; lots of script.');
 // }
 
 var assStart = 1000;
+// var assCurrent = selected();
 
-
-function countDown() {
-  if((document.querySelector('#assetCount').innerHTML) <= 0){
-    var box = document.querySelector('.board');
-    box.removeEventListener('click', selected);
-  }
-  // var assCounter = document.querySelector('#assetCount');
-  // var assNum = assStart - 100;
-  // assCounter.innerHTML = assNum;
-  // document.querySelector('#assetCount').innerHTML = assStart - 100;
-}
+// function countDown() {
+//   var box = document.querySelector('.board');
+//   if(assStart <= 0){
+    
+//     box.removeEventListener('click', selected);
+//   }
+//   // var assCounter = document.querySelector('#assetCount');
+//   // var assNum = assStart - 100;
+//   // assCounter.innerHTML = assNum;
+//   // document.querySelector('#assetCount').innerHTML = assStart - 100;
+// }
 
 function listenEvent(){
+  // if (!parseInt(document.querySelector('#assetCount').innerHTML) === 0){
   var box = document.querySelector('.board');
   box.addEventListener('click', selected);
-}
+  }
+// }
 
 function selected(event) {
   if(!event.target.classList.contains("assignedAsset")){
     event.target.classList.add('assignedAsset');
-  // event.target.classList.remove('box');
-  event.target.innerText = '100';
-  document.querySelector('#assetCount').innerHTML = assStart -= 100;
-  // var clickedBox = doument.querySelector('.assignedAsset');
-  // event.target.remove('.box');
-  // clickedBox.classList.add('taken');
-  // event.target.removeEventListener('click', selected);
-  } 
+    event.target.innerText = '100';
+    document.querySelector('#assetCount').innerHTML = assStart -= 100;
+    
+    
+  }
+  // return parseInt(document.querySelector('#assetCount').innerHTML);
 }
+// console.log(selected());
+
+
+
 
 function renderRow(rowIdx) {
   var rowEl = document.createElement('div');
@@ -96,7 +101,8 @@ var board = {
   render: render,
   renderBoard: renderBoard,
   renderRow: renderRow,
-  listenEvent: listenEvent
+  listenEvent: listenEvent,
+  // countDown: countDown;
 };
 
 // var think = {
@@ -111,3 +117,4 @@ var board = {
 // print();
 board.render();
 board.listenEvent();
+// board.countDown();
