@@ -21,6 +21,10 @@ var assStart = 1000;
 // }
 
 function gameAttack (){
+  var cell = document.querySelector('.box');
+  var victim = cell[r][c];
+  var r = cell.dataset.row;
+  var c = cell.dataset.col;
   var attackTarget = 
   var colAttack = Math.floor(Math.random() * 20);
   var rowAttack = Math.floor(Math.random() * 10);
