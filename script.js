@@ -20,11 +20,29 @@ var assStart = 1000;
 //   // document.querySelector('#assetCount').innerHTML = assStart - 100;
 // }
 
+function gameAttack (){
+  var attackTarget = 
+  var colAttack = Math.floor(Math.random() * 20);
+  var rowAttack = Math.floor(Math.random() * 10);
+  for (i = 0; i < 10; i++){
+    
+  }
+}
+
+function attackResult(){
+  var attTarget = document.querySelector('.box');
+  if(!attTarget.classList.contains("assignedAsset")){
+    attTarget.classList.add('hit');
+  } else {
+    attTarget.classList.add('miss');
+  }
+}
+
 function listenEvent(){
   // if (!parseInt(document.querySelector('#assetCount').innerHTML) === 0){
   var box = document.querySelector('.board');
   box.addEventListener('click', selected);
-  }
+}
 // }
 
 function selected(event) {
@@ -32,14 +50,33 @@ function selected(event) {
     event.target.classList.add('assignedAsset');
     event.target.innerText = '100';
     document.querySelector('#assetCount').innerHTML = assStart -= 100;
-    
-    
+    theApp.assCurrent = parseInt(document.querySelector('#assetCount').innerHTML);
+    var classNum = document.querySelectorAll('.board .assignedAsset').length;
+    console.log(classNum);
+  } else if
+    (theApp.assCurrent <= 0) {
+    var box = document.querySelector('.board');
+    box.removeEventListener('click', selected);
+    document.querySelector('#assetTitle').innerHTML = "Assets Left:";
+    document.querySelector('#assetCount').innerHTML = 1000;
+    gameAttack();
   }
-  // return parseInt(document.querySelector('#assetCount').innerHTML);
+  return classNum;
+  return theApp.assCurrent;
 }
+
+// function classCount(){
+// var classNum = document.querySelectorAll('.board .assignedAsset').length;
+// console.log(classNum);
+// }
 // console.log(selected());
 
-
+// function stopSetup(){
+//   if(theApp.assCurrent <= 0){
+//     var box = document.querySelector('.board');
+//     box.removeEventListener('click', selected);
+//   }
+// }
 
 
 function renderRow(rowIdx) {
@@ -105,6 +142,10 @@ var board = {
   // countDown: countDown;
 };
 
+var theApp = {
+  // stopSetup: stopSetup
+  // classCount: classCount
+};
 // var think = {
 //   row: [],
 //   col: [],
@@ -115,6 +156,9 @@ var board = {
 // };
     
 // print();
+
 board.render();
 board.listenEvent();
+// theApp.classCount();
+// theApp.stopSetup();
 // board.countDown();

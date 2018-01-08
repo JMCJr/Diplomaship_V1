@@ -29,6 +29,17 @@ p {
   display: flex;
 }
 
+.hit {
+  padding: 5px;
+  background-image: url(images/hit.jpg);
+  background-size: 55px;
+  height: 40px;
+  width: 40px;
+  border: 2px solid red;
+  display: flex;
+  margin: 0 auto;
+}
+
 .grid {
   display: flex;
   flex-direction: column;
@@ -41,10 +52,10 @@ p {
 
 .assignedAsset {
   padding: 5px;
-  background-color: pink;
+  background-color: lightblue;
   height: 40px;
   width: 40px;
-  border: 2px solid red;
+  border: 2px solid navy;
   display: flex;
   justify-content: center;
   margin:0 auto;
